@@ -14,7 +14,7 @@ npm install -D void
 
 
 [tasks.init]
-description = "init Void app"
+description = "init Void app with questions ..."
 run = """
 npx void init
 """
@@ -23,11 +23,8 @@ npx void init
 description = "Delete everything except mise.toml"
 run = """
 shopt -s extglob
-rm -rf (mise.toml|README.md)
+rm -rf !(mise.toml|README.md)
 """
-
-
-
 
 [tasks.dev]
 description = "Start the local Void development server"
