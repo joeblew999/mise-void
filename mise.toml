@@ -22,7 +22,6 @@ npx void init
 [tasks."init:clean"]
 description = "Delete everything except mise.toml"
 run = """
-shopt -s extglob
 rm -rf !(mise.toml|README.md)
 """
 
