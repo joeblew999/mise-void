@@ -1,0 +1,34 @@
+[tools]
+# 1. Void requires Node.js 24.22+ or 26.12+
+node = "26.13"
+
+# 2. Pin pnpm to ensure reproducible package management across the team
+pnpm = "latest"
+
+
+[tasks.install]
+description = "install Void"
+run = """
+npm install -D void
+"""
+
+
+[tasks.init]
+description = "init Void"
+run = """
+npx void init
+"""
+
+[tasks."init:clean"]
+description = "Delete everything except mise.toml"
+run = """
+shopt -s extglob
+rm -rf !(mise.toml)
+"""
+
+
+
+
+[tasks.dev]
+description = "Start the local Void development server"
+run = "pnpm run dev"

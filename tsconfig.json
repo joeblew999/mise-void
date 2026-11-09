@@ -1,0 +1,41 @@
+{
+  "extends": "./.void/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": [
+      "void/env"
+    ],
+    "paths": {
+      "void/db": [
+        "./.void/db.d.ts"
+      ],
+      "@schema": [
+        "./db/schema.ts"
+      ],
+      "@schema/*": [
+        "./db/schema/*"
+      ],
+      "void/routes": [
+        "./.void/routes.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "pages",
+    "routes",
+    "middleware",
+    "crons",
+    "queues",
+    "db"
+  ],
+  "files": [
+    "./.void/routes.d.ts",
+    "./.void/db.d.ts"
+  ]
+}
