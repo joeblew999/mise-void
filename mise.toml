@@ -14,7 +14,7 @@ npm install -D void
 
 
 [tasks.init]
-description = "init Void"
+description = "init Void app"
 run = """
 npx void init
 """
@@ -23,7 +23,7 @@ npx void init
 description = "Delete everything except mise.toml"
 run = """
 shopt -s extglob
-rm -rf !(mise.toml)
+rm -rf (mise.toml|README.md)
 """
 
 
